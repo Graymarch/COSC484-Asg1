@@ -7,13 +7,59 @@
     <link rel="stylesheet" href="tueats.css">
 </head>
 <body>
+    <h1>Welcome To TU Eats</h1>
     <fieldset>
-        <h3>Sign Up</h3>
-        <form action="GET" action="tueats_completed.html">
-            <input type="text" name="uname" required>
-            <input type="email" name="email" required>
-            <input type="submit">
-        </form>
+        <legend>Sign Up</legend>
+        <table id="form-table">
+            <tr>
+                <td>
+                    <form action="GET" action="tueats_completed.html" class="sign-up-form">
+                        <p>Username: <input type="text" name="uname" required></p>
+                        <p>Email: <input type="email" name="email" required></p>
+                        <p>Referral Code: <input type="text" name="referral"></p>
+                        <p>Password: <input type="password" name="pword"></p>
+                        <p>Verify Password: <input type="password" name="Verify"></p>
+                        <p><input type="checkbox" name="newsletter"> Sign Up For Our Newsletter?</p>
+                        <input type="submit">
+                    </form>
+                </td>
+                <td id="logo-cell">
+                    <img src="assets/TULogo.png" alt="Towson Logo">
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <table id="menu-table">
+            <caption>
+                Menu is subject to change, please visit our <a href="https://towson.edu">main site</a> for more information.
+            </caption>
+            <tr class="header-row">
+                <td></td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Calories</td>
+            </tr>
+            <tr>
+                <td>Item 1</td>
+                <td>Burger</td>
+                <td>$8</td>
+                <td>550</td>
+            </tr>
+            <tr>
+                <td>Item 2</td>
+                <td>Mozzarella Sticks</td>
+                <td>$7</td>
+                <td rowspan="2">400</td>
+            </tr>
+            <tr>
+                <td>Item 3</td>
+                <td>Fries</td>
+                <td>$4</td>
+                
+            </tr>
+        </table>
     </fieldset>
 </body>
 </html>
