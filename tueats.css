@@ -17,11 +17,11 @@ h1{
     border-collapse: collapse;
 }
 
-.header-row{
-    font-weight: bold;
-}
-
 #menu-table td{
     border: 1px solid black;
     text-align: center;
+}
+
+.header-row{
+    font-weight: bold;
 }
