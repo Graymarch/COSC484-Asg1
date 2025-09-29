@@ -4,8 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function loadParams(){
+            //Collects the parameters submitted by the GET request
+            let params = new URLSearchParams(window.location.search)
+
+            //Iterates through the submitted parameters and creates list items. 
+            for (const key of params.keys()){
+                if (params.get(key)){
+                    let newItem = document.createElement("li")
+
+                    //Sets a slightly different text for the 'referral' parameter
+                    if(key == "Referral"){
+                        newItem.textContent = key + ": " + params.get(key) + " (free meal)"
+                    }else{
+                       newItem.textContent = key + ": " + params.get(key) 
+                    }
+
+                    //Sets styling for the new item. 
+                    newItem.setAttribute("style", "font-size: larger; padding-bottom: 20px")
+
+                    //Appends the new element to the designated parent. 
+                    const parentElement = document.getElementById("form-results")
+                    parentElement.appendChild(newItem)
+                }
+            }
+
+            //If the box was unchecked, creates a list item stating as much.
+            if (!params.get("Newsletter")){
+                let newItem = document.createElement("li")
+                newItem.textContent = "Checkbox: false"
+                newItem.setAttribute("style", "font-size: larger; padding-bottom: 20px")
+
+                const parentElement = document.getElementById("form-results")
+                parentElement.appendChild(newItem)
+            }
+
+            //Welcomes the user.
+            const welcomeText = document.getElementById("welcome-text")
+            welcomeText.textContent = "Hello: " + params.get("Username")
+        }
+    </script>
 </head>
-<body>
+<body onload=loadParams()>
     <h1>Welcome to TUEats</h1>
+    <h2 id="welcome-text"></h2>
+    <ul id="form-results"></ul>
 </body>
 </html>
