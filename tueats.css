@@ -21,7 +21,7 @@ h1{
     font-weight: bold;
 }
 
-.menu-table td{
+#menu-table td{
     border: 1px solid black;
     text-align: center;
 }
